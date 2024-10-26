@@ -50,6 +50,7 @@ public class GameMath : MonoBehaviour {
             textJawaban2.text = pilihan2[urutan_soal];
             textJawaban3.text = pilihan3[urutan_soal];
             textJawaban4.text = pilihan4[urutan_soal];
+
         } else {
             // Jika soal habis, tampilkan pesan selesai
             selesai.SetActive(true);
@@ -57,12 +58,13 @@ public class GameMath : MonoBehaviour {
         }
     }
 
+
     // Logika ketika pemain memilih jawaban
     public void jawab(string jawaban) {
         if (urutan_soal < soal1.Length) {
             if (jawaban == jawabanBenar[urutan_soal]) {
                 skor += 20;  // Tambah skor jika jawaban benar
-               feed_benar.SetActive(true);
+                feed_benar.SetActive(true);
                 feed_salah.SetActive(false);
             } else {
                feed_benar.SetActive(false);
