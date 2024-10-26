@@ -62,14 +62,14 @@ public class GameMath : MonoBehaviour {
         if (urutan_soal < soal1.Length) {
             if (jawaban == jawabanBenar[urutan_soal]) {
                 skor += 20;  // Tambah skor jika jawaban benar
-                feed_benar.SetActive(true);
+               feed_benar.SetActive(true);
                 feed_salah.SetActive(false);
             } else {
-                feed_benar.SetActive(false);
+               feed_benar.SetActive(false);
                 feed_salah.SetActive(true);
             }
-            tampil_pernyataan();  // Tampilkan pernyataan berikutnya
         }
+            tampil_pernyataan();  // Tampilkan pernyataan berikutnya
     }
 
     // Update skor di layar secara real-time
