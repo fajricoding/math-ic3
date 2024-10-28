@@ -36,15 +36,7 @@ public class GameMath : MonoBehaviour {
     void tampil_pernyataan() {
         urutan_soal++;
         if (urutan_soal < per1.Length) {
-            
-             // Mengisi tombol dengan jawaban pilihan
-           
-             textJawaban1.text = pilihan1[urutan_soal];
-            textJawaban2.text = pilihan2[urutan_soal];
-            textJawaban3.text = pilihan3[urutan_soal];
-            textJawaban4.text = pilihan4[urutan_soal];
-
-// Menampilkan teks pernyataan dan gambar
+            // Menampilkan teks pernyataan dan gambar
             p1.text = per1[urutan_soal];
             p2.text = per2[urutan_soal];
             text1.text = soal1[urutan_soal];
@@ -53,14 +45,17 @@ public class GameMath : MonoBehaviour {
             gambar2.sprite = gambarSoal2[urutan_soal];
             operatorText.text = operatorSoal[urutan_soal];
 
-           
+            // Mengisi tombol dengan jawaban pilihan
+            textJawaban1.text = pilihan1[urutan_soal];
+            textJawaban2.text = pilihan2[urutan_soal];
+            textJawaban3.text = pilihan3[urutan_soal];
+            textJawaban4.text = pilihan4[urutan_soal];
         } else {
             // Jika soal habis, tampilkan pesan selesai
             selesai.SetActive(true);
             bank_soal.SetActive(false);
         }
     }
-
 
     // Logika ketika pemain memilih jawaban
     public void jawab(string jawaban) {
@@ -70,8 +65,7 @@ public class GameMath : MonoBehaviour {
                 feed_benar.SetActive(true);
                 feed_salah.SetActive(false);
             } else {
-                skor -=10;
-               feed_benar.SetActive(false);
+                feed_benar.SetActive(false);
                 feed_salah.SetActive(true);
             }
             tampil_pernyataan();  // Tampilkan pernyataan berikutnya
